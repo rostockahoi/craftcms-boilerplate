@@ -1,0 +1,18 @@
+{% extends "_layouts/_master" %}
+
+{% set title = "Blog" %}
+
+{% block content%}
+<h1>Blog</h1>
+<ul>
+{% for entry in craft.entries.section('blog').limit(5).find() %}
+  <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+
+
+{% set featImage = entry.featuredImage.first() %}
+  {% if featImage %}
+    <img src="{{ featImage.getUrl('thumbnail') }}" alt="" height="{{ featImage.getHeight('thumbnail') }}" />
+  {% endif %}
+{% endfor %}
+</ul>
+{% endblock %}

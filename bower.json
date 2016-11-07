@@ -1,0 +1,25 @@
+{
+  "name": "craftCMS-starter",
+  "description": "CraftCMS Starter w/ Foundation 6",
+  "main": "",
+  "authors": [
+    "Johannes Ahrndt"
+  ],
+  "license": "WTFPL",
+  "keywords": [
+    "craftcms",
+    "gulp",
+    "foundation"
+  ],
+  "homepage": "https://rostock-ahoi.de",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation-sites": "^6.2.4"
+  }
+}
