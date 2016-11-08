@@ -11,11 +11,13 @@ This is just a starter that I am using to kickstart development:
 - gulp-scss-lint wants Ruby gem scss-lint
 
 ## Getting started
+1. Clone or download this repo and rename it to your needs
+2. `.gitignore` is set up already but you can change it
 1. Run `npm install && bower install` and meanwhile
 2. Setup a database and change your credentials in `dist/public/craft/config/db.php`
 3. Change Craft configuration in `dist/public/craft/config/general.php`
 4. Download latest Craft Package from [Craft Website](https://craftcms.com/)
-5. Copy over the missing `app/` folder
+5. Copy over the missing files and folders from the download to `dist/public/craft/`
 6. Check the [install section](https://craftcms.com/docs/installing) to set write permissions properly.
 7. Point your dev server to `dist/public/` (I am using Vagrant and Scotchbox)
 8. Hit `yourdomain.dev/admin`
