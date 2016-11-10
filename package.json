@@ -3,19 +3,21 @@
   "version": "1.0.0",
   "description": "CraftCMS Starter w/ Foundation 6",
   "main": "gulpfile.js",
+  "repository": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "browser-sync": "*",
     "browserify": "^13.1.1",
+    "debowerify": "^1.5.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "*",
+    "gulp-cached": "^1.1.0",
     "gulp-clean-css": "*",
     "gulp-concat": "*",
     "gulp-notify": "*",
     "gulp-plumber": "*",
-    "gulp-cached": "^1.1.0",
     "gulp-rename": "*",
     "gulp-sass": "*",
     "gulp-scss-lint": "^0.4.0",
