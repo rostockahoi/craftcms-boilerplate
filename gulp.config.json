@@ -1,0 +1,37 @@
+{
+    "url": 				"craft.dev",
+    "src": {
+        "styles": 		"src/styles",
+        "scripts": 		"src/scripts",
+        "templates": 	"src/templates",
+        "fonts": 		"src/fonts",
+        "images": 		"src/img",
+        "favicon": 		"src/favicon/favicon.png"
+    },
+    "dist": {
+    	"styles": 		"dist/public/assets/css",
+    	"scripts": 		"dist/public/assets/js",
+    	"templates": 	"dist/craft/templates",
+    	"fonts": 		"dist/public/assets/fonts",
+    	"images": 		"dist/public/assets/img",
+    	"favicon": 		"dist/public/favicon"
+    },
+    "styles": {
+    	"compatibility": [
+	        "last 2 versions",
+	        "ie >= 9"
+	    ],
+	    "includePaths": []
+    },
+    "favicon": {
+    	"templateFile": "_favicon.html",
+    	"background": "#FFFFFF",
+    	"theme_color": "#FFFFFF",
+    	"path": "favicon/",
+    	"display": "standalone",
+    	"orientation": "portrait",
+    	"start_url": "/?homescreen=1",
+    	"pipeHTML": true,
+    	"replace": true
+    }
+}

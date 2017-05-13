@@ -51,7 +51,6 @@ jspm_packages
 .yarn-integrity
 
 
-
 ### Bower ###
 bower_components
 .bower-cache
@@ -60,14 +59,25 @@ bower_components
 
 
 ### CraftCMS ###
-**/dist/public/assets/css/**/*
-**/dist/public/assets/js/**/*
+# track files that are created by dev
+# do not track files that are created by users
+# do not track build files
 
-dist/**/craft/templates/*
-dist/**/craft/app/*
-dist/**/craft/templates/*
-dist/**/craft/config/db.php
-dist/**/craft/config/general.php
-# Craft Storage (cache) [http://buildwithcraft.com/help/craft-storage-gitignore]
-dist/**/craft/storage/*
-!dist/**/craft/storage/logo/*
+dist/public/**/*
+!dist/public/index.php
+!dist/public/robots.txt
+!dist/public/web.config
+!dist/public/.htaccess
+
+dist/craft/config/db.php
+dist/craft/config/license.key
+dist/craft/storage/runtime/*
+dist/craft/storage/backups/*
+
+!dist/craft/**/*/web.config
+!dist/craft/**/*/.htaccess
+
+# nystudio107 Multi-Environment-Config
+/.env.php
+# nystudio107 Craft-Scripts
+.env.sh

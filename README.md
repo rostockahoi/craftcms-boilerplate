@@ -3,12 +3,10 @@
 This is just a starter that I am using to kickstart development:
 - using SCSS and SCSS lint
 - Browserify to load JS modules
-- Syncy to copy twig templates
 
 ## Build requirements
 - node.js
-- bower
-- gulp-scss-lint wants Ruby gem scss-lint
+- gulp-scss-lint requires Ruby gem scss-lint
 
 ## Getting started
 1. Clone or download this repo and rename it to your needs
