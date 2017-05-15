@@ -1,0 +1,3 @@
+[submodule "craft-scripts"]
+	path = craft-scripts
+	url = git@github.com:nystudio107/craft-scripts.git

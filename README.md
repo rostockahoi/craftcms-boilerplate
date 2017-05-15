@@ -1,29 +1,29 @@
-# CraftCMS with Gulp and Foundation for Sites 6
-
-This is just a starter that I am using to kickstart development:
-- using SCSS and SCSS lint
-- Browserify to load JS modules
-
-## Build requirements
-- node.js
-- gulp-scss-lint requires Ruby gem scss-lint
+# CraftCMS boilerplate
 
 ## Getting started
-1. Clone or download this repo and rename it to your needs
-2. `.gitignore` is set up already but you can change it
-1. Run `npm install && bower install` and meanwhile
-2. Setup a database and change your credentials in `dist/public/craft/config/db.php`
-3. Change Craft configuration in `dist/public/craft/config/general.php`
-4. Download latest Craft Package from [Craft Website](https://craftcms.com/)
-5. Copy over the missing files and folders from the download to `dist/public/craft/`
-6. Check the [install section](https://craftcms.com/docs/installing) to set write permissions properly.
-7. Point your dev server to `dist/public/` (I am using Vagrant and Scotchbox)
-8. Hit `yourdomain.dev/admin`
+- Clone or download this repo and rename it to your needs
+- `.gitignore` is set up already but you can change it
+- Run `npm install`
+- Setup a database
+- Follow these instruction to setup Craft Multi-Environment (CME): https://github.com/nystudio107/craft-multi-environment#setting-it-up
+- Download latest Craft Package from [CraftCMS latest](http://craftcms.com/latest.zip?accept_license=yes)
+- Copy over the missing files and folders from the archive to `dist/craft/app`
+- Check the [install section](https://craftcms.com/docs/installing) to set write permissions properly.
+- Point your dev server to `dist/public/` (I am using Vagrant and Scotchbox)
+- Hit `yourdomain.dev/admin`
 
 If the last point not works try `yourdomain.dev/index.php?admin` and take a look at [Craft's Docs](https://craftcms.com/docs/config-settings#omitScriptNameInUrls). If your are using Apache you may have to configure it to allow overrides through `.htaccess` files.
 
+## Submodules
+
+- nystudio107/craft-scripts (https://github.com/nystudio107/craft-scripts)
+	This is useful if you plan to deploy your app using some pattern like this: https://nystudio107.com/blog/database-asset-syncing-between-environments-in-craft-cms.
+
+## Notes
+
+I highly recommend using the multi environment config from here: https://github.com/nystudio107/craft-multi-environment. There is a Nginx configuration example also.
+
 ## Important
-Do not forget to put directory `dist/public/craft/` into `dist/` when going live. That is, it __has to be__ above web root. After that change line 5 in `dist/public/index.php` into line 4.
 
 ## Todo
-- Gulp tasks for production mode to uglify, minify, optimize images
+
