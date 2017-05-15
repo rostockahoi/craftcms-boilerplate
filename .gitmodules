@@ -1,3 +1,6 @@
 [submodule "craft-scripts"]
 	path = craft-scripts
 	url = git@github.com:nystudio107/craft-scripts.git
+[submodule "craft-multi-environment"]
+	path = craft-multi-environment
+	url = git@github.com:nystudio107/craft-multi-environment.git
