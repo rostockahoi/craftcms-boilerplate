@@ -1,1 +1,1 @@
-var _ = require("lodash");
+/*This is you entry point.*/

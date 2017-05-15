@@ -1,12 +1,12 @@
 {
-  "name": "craftcms-starter",
+  "name": "craftcms-boilerplate",
   "version": "0.0.1",
-  "description": "CraftCMS 2.x Starter",
+  "description": "CraftCMS 2 boilerplate",
   "private": true,
   "author": "Johannes Ahrndt",
   "license": "MIT",
   "main": "gulpfile.js",
-  "repository": "https://github.com/rostockahoi/craftcms-gulp-foundation",
+  "repository": "https://github.com/rostockahoi/craftcms-boilerplate",
   "scripts": {
     "dev": "gulp watch",
     "build": "gulp build"
@@ -17,6 +17,7 @@
     "browser-sync": "*",
     "browserify": "^13.1.1",
     "del": "^2.2.2",
+    "eslint": "^3.19.0",
     "eslint-config-google": "^0.7.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
@@ -26,6 +27,7 @@
     "gulp-clean": "^0.3.2",
     "gulp-clean-css": "*",
     "gulp-concat": "*",
+    "gulp-eslint": "^3.0.1",
     "gulp-favicons": "^2.2.7",
     "gulp-load-plugins": "^1.5.0",
     "gulp-notify": "*",
@@ -39,6 +41,7 @@
     "gulp-streamify": "^1.0.2",
     "gulp-uglify": "*",
     "node-notifier": "^5.1.2",
+    "pump": "^1.0.2",
     "vinyl-source-stream": "^1.1.0"
   },
   "eslintConfig": {
