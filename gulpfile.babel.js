@@ -102,7 +102,23 @@ gulp.task( 'build:styles', ['clean:build:styles'], () => {
 /*
  * SCRIPTS TASK
  */
-gulp.task( 'clean:scripts', () => {
+gulp.task('lint', () => {
+    // ESLint ignores files with "node_modules" paths.
+    // So, it's best to have gulp ignore the directory as well.
+    // Also, Be sure to return the stream from the task;
+    // Otherwise, the task may end before the stream has finished.
+    return gulp.src([config.src.scripts + '/**/*.js','!node_modules/**'])
+        // eslint() attaches the lint output to the "eslint" property
+        // of the file object so it can be used by other modules.
+        .pipe($.eslint())
+        // eslint.format() outputs the lint results to the console.
+        // Alternatively use eslint.formatEach() (see Docs).
+        .pipe($.eslint.format())
+        // To have the process exit with an error code (1) on
+        // lint error, return the stream and pipe to failAfterError last.
+        .pipe($.eslint.failAfterError());
+});
+gulp.task( 'clean:scripts', ['lint'], () => {
 	return del([
 		config.dist.scripts + '/app.js',
 		config.dist.scripts + '/app.js.map'
@@ -125,7 +141,7 @@ gulp.task( 'scripts', ['clean:scripts'], () => {
         } ) )
         .pipe( $.notify( '[dev] Scripts task finished' ) );
 } );
-gulp.task( 'clean:build:scripts', () => {
+gulp.task( 'clean:build:scripts', ['lint'], () => {
 	return del([
 		config.dist.scripts + '/app.min.js',
 		config.dist.scripts + '/app.js.min.map'
@@ -173,12 +189,12 @@ gulp.task('templates', ['clean:templates'], () => {
 /*
  * IMAGES TASK
  */
-gulp.task('clean:templates', () => {
+gulp.task('clean:images', () => {
  return del([
      config.dist.images + '/**/*'
      ]);
 });
-gulp.task( 'images', () => {
+gulp.task( 'images', ['clean:images'], () => {
     return gulp.src( config.src.images + '/**/*' )
         .on( 'error', $.notify.onError( "Error: <%= error.message %>" ) )
         .pipe( gulp.dest( config.dist.images ) )
@@ -196,7 +212,7 @@ gulp.task( 'cachebust:scripts', () => {
     return gulp.src( config.src.templates + '/_layouts/_master.twig' )
         .pipe( $.replace( /app.min.js(\?v=)*([0-9]*)/g, 'app.min.js?v=' + getTimestamp() ))
         .pipe( $.replace( /app.js(\?v=)*([0-9]*)/g, 'app.js?v=' + getTimestamp() ))
-        .pipe( gulp.dest( config.src.templates + '/_layouts/' ) )
+        .pipe( gulp.dest( config.dist.templates + '/_layouts/' ) )
         .pipe( $.notify( 'Cache busting scripts task finished' ) );
 } );
 
@@ -204,7 +220,7 @@ gulp.task( 'cachebust:styles', () => {
     return gulp.src( config.src.templates + '/_layouts/_master.twig' )
         .pipe($.replace( /app.min.css(\?v=)*([0-9]*)/g, 'app.min.css?v=' + getTimestamp()))
         .pipe($.replace( /app.css(\?v=)*([0-9]*)/g, 'app.css?v=' + getTimestamp()))
-        .pipe( gulp.dest( config.src.templates + '/_layouts/' ) )
+        .pipe( gulp.dest( config.dist.templates + '/_layouts/' ) )
         .pipe( $.notify( 'Cache busting styles task finished' ) );
 } );
 

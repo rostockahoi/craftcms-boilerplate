@@ -9,12 +9,12 @@
         "favicon": 		"src/favicon/favicon.png"
     },
     "dist": {
-    	"styles": 		"dist/public/assets/css",
-    	"scripts": 		"dist/public/assets/js",
-    	"templates": 	"dist/craft/templates",
-    	"fonts": 		"dist/public/assets/fonts",
-    	"images": 		"dist/public/assets/img",
-    	"favicon": 		"dist/public/favicon"
+    	"styles": 		"public/assets/css",
+    	"scripts": 		"public/assets/js",
+    	"templates": 	"craft/templates",
+    	"fonts": 		"public/assets/fonts",
+    	"images": 		"public/assets/img",
+    	"favicon": 		"public/favicon"
     },
     "styles": {
     	"compatibility": [
