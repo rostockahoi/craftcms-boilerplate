@@ -50,7 +50,7 @@ mkdir ./public/favicon
 #
 
 echo -e "${ACCENT}Initializing Git submodules${NC}"
-git submodule init
+git submodule update --init --recursive
 # Remove files ./craft/config/general.php, ./craft/config/db.php and ./public/index.php and copy new ones
 cp ./craft-multi-environment/craft/config/general.php ./craft/config/general.php
 cp ./craft-multi-environment/craft/config/db.php ./craft/config/db.php
